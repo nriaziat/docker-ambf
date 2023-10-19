@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y ros-melodic-tf
 RUN echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc
 
 # Install Git, Python pip, tf
-RUN apt-get update && apt-get install -y git python-pip libasound2-dev
+RUN apt-get update && apt-get install -y git python-pip libasound2-dev && rm -rf /var/lib/apt/lists/*
 
 # Clone AMBF
 RUN cd  && git clone https://github.com/WPI-AIM/ambf
